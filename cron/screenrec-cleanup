@@ -1,0 +1,6 @@
+# Xubuntu Screen Recorder - Automatic Cleanup
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Minute Hour Day Month Weekday User Command
+0 3 * * * @SCREENREC_USER@ /usr/local/libexec/screenrec/cleanup.sh > /dev/null

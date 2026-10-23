@@ -1,0 +1,20 @@
+[Unit]
+Description=Screen recording of the local XFCE/X11 desktop
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/libexec/screenrec/record.sh
+
+Restart=on-failure
+RestartSec=10s
+
+KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=60s
+
+UMask=0077
+NoNewPrivileges=yes
+
+StandardOutput=journal
+StandardError=journal
