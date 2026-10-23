@@ -1,20 +1,9 @@
-[Unit]
-Description=Screen recording of the local XFCE/X11 desktop
-PartOf=graphical-session.target
-
-[Service]
-Type=simple
-ExecStart=/usr/local/libexec/screenrec/record.sh
-
-Restart=on-failure
-RestartSec=10s
-
-KillMode=mixed
-KillSignal=SIGTERM
-TimeoutStopSec=60s
-
-UMask=0077
-NoNewPrivileges=yes
-
-StandardOutput=journal
-StandardError=journal
+[Desktop Entry]
+Type=Application
+Name=Xubuntu Screen Recorder
+Comment=Start screen recording after XFCE login
+Exec=/usr/local/libexec/screenrec/session-start.sh
+Terminal=false
+Hidden=false
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-enabled=true
